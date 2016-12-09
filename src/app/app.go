@@ -48,7 +48,7 @@ func countOccurrencesHandler(w http.ResponseWriter, r *http.Request) {
     }
 
     // To prevent "index out of bound"
-    if len(res) > 10 {
+    if len(res) > limit {
         responseEncoder(w, http.StatusOK, res[0:limit])
         return
     }
